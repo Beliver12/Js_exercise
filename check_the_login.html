@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Check the login</title>
+  </head>
+  <body>
+  
+
+    <script>
+        /*prompt = gives userName and pass question to answer */
+
+      let userName = prompt("Who's there?","");
+
+      if(userName === "Admin") {
+
+        let pass = prompt("Password?","");
+         
+          /*If user answers right question, alert welcome */
+        
+        if(pass === "TheMaster") {
+          alert("Welcome!");
+
+          /*If user answers nothing OR=(||) answers wrong Password,
+          alert "canceled" or "wrong password" */
+        } else if(pass === "" || pass === null) {
+          alert("Canceled");
+        } else {
+          alert("Wrong password");
+        }
+
+          /*If user answers nothing OR=(||) answers wrong userName,
+          alert "canceled" or "I dont know you" */
+
+        } else if(userName === "" || userName === null) {
+          alert("Canceled");
+        } else{
+          alert("I don't know you");
+        }  
+    </script>
+  </body>
+</html>
+</script>
+    
+  </body>
+</html>
