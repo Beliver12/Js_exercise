@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Allowance updater example</title>
+  </head>
+  <body>
+    <label for="shopping-check">Has the shopping been done? </label>
+    <input type="checkbox" id="shopping-check">
+
+    <p></p>
+
+    <script>
+         /*Here we assing const to be checkBox for our input, and
+         para for our paragraph , and we give them function(querySelector),
+         and we let shoppingDone to be false */
+         
+
+      const checkBox = document.querySelector('input');
+      const para = document.querySelector('p');
+      let shoppingDone = false;
+        
+        /*Here we give checkBox function(addEventListener) 
+          so when we check the checkBox, it becomes
+          disabled, so we assing that checkBox when disabled 
+          or checked becomes true, and we updateAllowance   */
+
+      checkBox.addEventListener('change', () => {
+        checkBox.disabled = true;
+        shoppingDone = true;
+        updateAllowance();
+      });
+       
+      /*Here we let the UpdateAllowance to do it's work
+      and give  command when to updateAllowance to higher or lower allowance*/
+
+      function updateAllowance() {
+        let childsAllowance;
+        if(shoppingDone === true){
+            childsAllowance = 10;
+        }   else{
+            childsAllowance = 5;
+        }
+       /*Here we give our paragraph function do display message
+       if childsAllowance is higher or lower*/
+        para.textContent = `Child has earned \$${childsAllowance}
+         this week.`;
+      }
+         /*This im not sure, i think it's for updateAllowance function to work*/
+         updateAllowance();
+    </script>
+  </body>
+</html>
